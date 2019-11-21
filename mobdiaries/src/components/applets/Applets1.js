@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 785,
     marginTop: 10,
-    height: 560
+    height: 530
   },
   media: {
     height: 400,
@@ -69,11 +69,11 @@ export default function Applets1() {
             </IconButton>
           }
           title="DiariesBot"
-          subheader="September 14, 2016"
+          subheader="November 21, 2019"
         />
         <CardMedia
           className={classes.media}
-          image="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
+          image="https://i.ibb.co/RH9Jh4N/asdf.gif"
           title="Paella dish"
         />
 
@@ -85,14 +85,7 @@ export default function Applets1() {
             <ShareIcon />
           </IconButton>
         </CardActions>
-        <Typography
-          variant="body2"
-          color="textPrimary"
-          component="p"
-          style={{ marginLeft: 10 }}
-        >
-          12,904 Likes
-        </Typography>
+       
       </Card>
     </Styles>
   );

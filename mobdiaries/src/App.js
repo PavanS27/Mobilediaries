@@ -1,16 +1,19 @@
 import React from "react";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import Applets1 from "./components/applets/Applets1";
-import Applets2 from "./components/applets/Applets2";
-
+import Projectpage from "./components/Pages/Projectpage"
+import Eventpage from "./components/Pages/Eventpage"
+import {BrowserRouter as Router,Route,Link,Switch} from "react-router-dom"
 function App() {
   return (
     <div className="App">
+      <Router>
       <Header />
-      <Applets1 />
-      <Applets2 />
+      <Switch>
+        <Route exact path="/" component={Eventpage}></Route>
+        <Route  path="/project" component={Projectpage}></Route></Switch>
       <Footer />
+      </Router>
     </div>
   );
 }

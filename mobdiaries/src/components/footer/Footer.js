@@ -6,18 +6,17 @@ import IconButton from "@material-ui/core/IconButton";
 import Fab from "@material-ui/core/Fab";
 import MenuIcon from "@material-ui/icons/Menu";
 import AddIcon from "@material-ui/icons/Add";
-import SearchIcon from "@material-ui/icons/Search";
+
 import Dialog from "@material-ui/core/Dialog";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
+import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import styled from "styled-components";
 import ChatIcon from "@material-ui/icons/Chat";
+import ChatApplet from "../chatbot/ChatApplet"
+import FaceIcon from "@material-ui/icons/Face";
 
 const Styles = styled.div`
   @media screen and (min-width: 420px) {
@@ -34,7 +33,9 @@ const Styles = styled.div`
 
 const useStyles = makeStyles(theme => ({
   appBar1: {
-    position: "relative"
+    position: "relative",
+    backgroundColor: "	rgb(255,127,80)",
+   
   },
   appBar: {
     top: "auto",
@@ -106,20 +107,27 @@ export default function Footer() {
       >
         <AppBar className={classes.appBar1}>
           <Toolbar>
+          <Avatar aria-label="recipe" className={classes.avatar} src="https://miro.medium.com/max/800/0*oz2e-hQtsHOWzoB4.">
+              <FaceIcon />
+            </Avatar>
+            
+            <Typography variant="h6" style={{ fontFamily: "'Slabo 27px', serif"}} className={classes.title}>
+              DiariesBOT
+            </Typography>
             <IconButton
               edge="start"
               color="inherit"
               onClick={handleClose}
               aria-label="close"
+              
             >
-              <CloseIcon />
+              <CloseIcon style={{marginRight: -100}} />
             </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              diariesBot
-            </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}></Button>
+            <Button autoFocus color="inherit" onClick={handleClose} ></Button>
           </Toolbar>
+          
         </AppBar>
+        <ChatApplet/>
       </Dialog>
     </React.Fragment>
   );
