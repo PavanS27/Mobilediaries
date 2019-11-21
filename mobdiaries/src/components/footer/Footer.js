@@ -16,6 +16,21 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
+import styled from "styled-components";
+import ChatIcon from "@material-ui/icons/Chat";
+
+const Styles = styled.div`
+  @media screen and (min-width: 420px) {
+    #fabi {
+      position: absolute;
+      z-index: 1;
+      top: -30;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+`;
 
 const useStyles = makeStyles(theme => ({
   appBar1: {
@@ -31,10 +46,12 @@ const useStyles = makeStyles(theme => ({
   fabButton: {
     position: "absolute",
     zIndex: 1,
-    top: -30,
+    top: -50,
     left: 0,
     right: 0,
-    margin: "0 auto"
+    margin: "0 auto",
+    width: 80,
+    height: 80
   },
   title: {
     marginLeft: theme.spacing(2),
@@ -64,13 +81,20 @@ export default function Footer() {
           <IconButton edge="start" color="inherit" aria-label="open drawer">
             <MenuIcon />
           </IconButton>
-          <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <AddIcon onClick={handleClickOpen} />
-          </Fab>
+          <a href="https://forms.gle/khQ5BShej2utw7nn8">
+            <Fab
+              color="secondary"
+              aria-label="add"
+              className={classes.fabButton}
+              id="fabi"
+            >
+              <AddIcon></AddIcon>
+            </Fab>
+          </a>
           <div className={classes.grow} />
 
-          <IconButton color="inherit">
-            <SearchIcon />
+          <IconButton color="inherit" onClick={handleClickOpen}>
+            <ChatIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -91,25 +115,11 @@ export default function Footer() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Sound
+              diariesBot
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              save
-            </Button>
+            <Button autoFocus color="inherit" onClick={handleClose}></Button>
           </Toolbar>
         </AppBar>
-        <List>
-          <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
-          </ListItem>
-        </List>
       </Dialog>
     </React.Fragment>
   );
