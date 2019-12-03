@@ -19,3 +19,6 @@ function App() {
 }
 
 export default App;
+
+
+/*<Route  path="/project" component={Projectpage}></Route></Switch>*/

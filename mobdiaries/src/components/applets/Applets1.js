@@ -21,7 +21,7 @@ const Styles = styled.div`
   @media screen and (min-width: 1020px) {
     #card {
       margin-left: 400px;
-      height: 650px;
+      height: 550px;
     }
   }
 `;
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 785,
     marginTop: 10,
-    height: 530
+    height: 500
   },
   media: {
     height: 400,
@@ -77,16 +77,19 @@ export default function Applets1() {
           title="Paella dish"
         />
 
-        <CardActions disableSpacing>
+       
+       
+      </Card>
+    </Styles>
+  );
+}
+
+
+/*  <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
-        </CardActions>
-       
-      </Card>
-    </Styles>
-  );
-}
+        </CardActions> */

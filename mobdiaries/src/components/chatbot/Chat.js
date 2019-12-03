@@ -6,7 +6,7 @@ const client = new ApiAiClient({ accessToken });
 
 const ON_MESSAGE = "ON_MESSAGE";
 
-export const sendMessage = (text, sender = "user") => ({
+export const sendMessage = (text, sender = "Me") => ({
   type: ON_MESSAGE,
   payload: { text, sender }
 });
@@ -22,12 +22,12 @@ const MessageMiddleWare = () => next => action => {
       const {
         result: { fulfillment }
       } = response;
-      next(sendMessage(fulfillment.speech, "bot"));
+      next(sendMessage(fulfillment.speech, "DiariesBOT"));
     }
   }
 };
 
-const initState = [{ text: "hey there! " }];
+const initState = [{ text: "hey there! ", sender: "DiariesBOT" }];
 
 const messageReducer = (state = initState, action) => {
   switch (action.type) {
