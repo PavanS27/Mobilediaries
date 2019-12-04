@@ -20,7 +20,7 @@ import FaceIcon from "@material-ui/icons/Face";
 const Styles = styled.div`
   @media screen and (min-width: 1020px) {
     #card {
-      margin-left: 400px;
+      margin-left: 300px;
       height: 550px;
     }
   }
@@ -28,7 +28,7 @@ const Styles = styled.div`
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 785,
+    maxWidth: 645,
     marginTop: 10,
     height: 500
   },
@@ -76,14 +76,10 @@ export default function Applets1() {
           image="https://i.ibb.co/RH9Jh4N/asdf.gif"
           title="Paella dish"
         />
-
-       
-       
       </Card>
     </Styles>
   );
 }
-
 
 /*  <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
